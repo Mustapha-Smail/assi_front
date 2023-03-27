@@ -1,1 +1,25 @@
-<p>pc-portable works!</p>
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center p-2">
+    <h1>PC Portables</h1>
+  </div>
+  <div class="row gx-5">
+    <div
+      class="card col-sm m-3"
+      style="width: 18rem"
+      *ngFor="let article of articles"
+    >
+      <img
+        class="card-img-top"
+        src="{{ article.photo }}"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ article.libelle }}</h5>
+        <p class="card-text">{{ article.prix }}€</p>
+        <a routerLink="/article/{{ article.idArticle }}" class="btn btn-primary"
+          >En savoir plus</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

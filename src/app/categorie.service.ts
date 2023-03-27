@@ -12,4 +12,40 @@ export class CategorieService {
   getAll(): Observable<Array<any>> {
     return this.http.get<Array<any>>(this.url);
   }
+
+  getPcPortable(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(this.url + '/4');
+  }
+
+  getPcBureau(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(this.url + '/5');
+  }
+
+  getPcAccessoires(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(this.url + '/6');
+  }
+
+  getSmartphones(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(this.url + '/7');
+  }
+
+  getTelephoneFixe(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(this.url + '/8');
+  }
+
+  getTelephoneAccessoires(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(this.url + '/9');
+  }
+
+  getDisqueDur(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(this.url + '/10');
+  }
+
+  getCleUsb(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(this.url + '/11');
+  }
+
+  getStockageAccessoire(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(this.url + '/12');
+  }
 }

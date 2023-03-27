@@ -18,6 +18,7 @@ import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { StockageAccessoiresComponent } from './stockage-accessoires/stockage-accessoires.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     CleUsbComponent,
     StockageAccessoiresComponent,
     FooterComponent,
+    ArticleComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

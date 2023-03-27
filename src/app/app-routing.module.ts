@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArticleComponent } from './article/article.component';
 import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { DisqueDurComponent } from './disque-dur/disque-dur.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'cle-usb', component: CleUsbComponent },
   { path: 'stockage-accessoires', component: StockageAccessoiresComponent },
   { path: 'Connexion', component: ConnexionComponent },
+  { path: 'article/:id', component: ArticleComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
