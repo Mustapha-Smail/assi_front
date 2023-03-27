@@ -19,6 +19,7 @@ import { StockageAccessoiresComponent } from './stockage-accessoires/stockage-ac
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ArticleComponent } from './article/article.component';
+import { PanierComponent } from './panier/panier.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ArticleComponent } from './article/article.component';
     StockageAccessoiresComponent,
     FooterComponent,
     ArticleComponent,
+    PanierComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ArticleService {
   url = 'http://localhost:8080/projet/rest/article';
+  article: any;
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   getAll(param: string | null): Observable<Object> {

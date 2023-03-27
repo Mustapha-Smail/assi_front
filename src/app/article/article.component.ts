@@ -18,10 +18,34 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
-      console.log(id);
       this.articleService.getAll(id).subscribe((result) => {
         this.article = result;
+        this.articleService.article = result;
       });
     });
+  }
+
+  public addPanier(article: any, quantite: string): void {
+    var q: number = +quantite;
+    var basket = {
+      articles: [
+        {
+          article,
+          q,
+        },
+      ],
+    };
+
+    var panier = localStorage.getItem('panier');
+
+    if (panier === null) {
+      localStorage.setItem('panier', JSON.stringify(basket));
+    } else {
+      var panierFromLocalStorage = JSON.parse(panier);
+
+      panierFromLocalStorage.articles.push({ article, quantite });
+
+      localStorage.setItem('panier', JSON.stringify(panierFromLocalStorage));
+    }
   }
 }
