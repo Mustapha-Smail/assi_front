@@ -1,1 +1,7 @@
 <p>panier works!</p>
+
+<ul>
+  <li *ngFor="let article of articles">
+    {{ article.article.libelle }} || {{ article.quantite }}
+  </li>
+</ul>

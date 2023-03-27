@@ -31,7 +31,7 @@ export class ArticleComponent implements OnInit {
       articles: [
         {
           article,
-          q,
+          quantite: q,
         },
       ],
     };
@@ -43,7 +43,22 @@ export class ArticleComponent implements OnInit {
     } else {
       var panierFromLocalStorage = JSON.parse(panier);
 
-      panierFromLocalStorage.articles.push({ article, quantite });
+      const found = panierFromLocalStorage.articles.some(
+        (ar: { article: { idArticle: any } }) =>
+          ar.article.idArticle === article.idArticle
+      );
+
+      console.log(found);
+
+      if (!found) {
+        panierFromLocalStorage.articles.push({ article, quantite });
+      } else {
+        const pos = panierFromLocalStorage.articles.findIndex(
+          (ar: { article: any }) => ar.article.idArticle === article.idArticle
+        );
+
+        panierFromLocalStorage.articles[pos].quantite = q;
+      }
 
       localStorage.setItem('panier', JSON.stringify(panierFromLocalStorage));
     }
