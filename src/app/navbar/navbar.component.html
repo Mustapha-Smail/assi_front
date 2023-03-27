@@ -4,7 +4,7 @@
       {{ elt.libelle }}
     </li>
   </ul> -->
-  <a class="navbar-brand" href="#">HighTech Store</a>
+  <a class="navbar-brand" href="#">BAM Store</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -21,7 +21,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home</a>
       </li>
-      <li class="nav-item dropdown" *ngFor="let elt of categories">
+      <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
           href="#"
@@ -29,16 +29,51 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-        >
-          {{ elt.libelle }}
+          >Ordinateurs
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink="/PcPortable">sous catégorie</a>
-          <a class="dropdown-item" routerLink="/PcBureau">sous catégorie</a>
+          <a class="dropdown-item" routerLink="/PcPortable">PC Portables</a>
+          <a class="dropdown-item" routerLink="/PcBureau">PC Bureau</a>
           <li><hr class="dropdown-divider" /></li>
-          <a class="dropdown-item" routerLink="/PcAccessoires"
-            >sous catégorie</a
-          >
+          <a class="dropdown-item" routerLink="/PcAccessoires"> Accessoires </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Téléphonie
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/smartphone">Smartphones</a>
+          <a class="dropdown-item" routerLink="/tel-fixe">Téléphone fixe</a>
+          <li><hr class="dropdown-divider" /></li>
+          <a class="dropdown-item" routerLink="/tel-accessoires">
+            Accessoires
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Stockage
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/disque-dur">Disque dur</a>
+          <a class="dropdown-item" routerLink="/cle-usb">Clé USB</a>
+          <li><hr class="dropdown-divider" /></li>
+          <a class="dropdown-item" routerLink="/stockage-accessoires">
+            Accessoires
+          </a>
         </div>
       </li>
     </ul>

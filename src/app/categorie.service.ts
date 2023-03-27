@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class CategorieService {
   url = 'http://localhost:8080/projet/rest/categories';
-
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Array<any>> {
