@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArticleComponent } from './article/article.component';
 import { PanierComponent } from './panier/panier.component';
+import { ModifArticleComponent } from './modif-article/modif-article.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PanierComponent } from './panier/panier.component';
     FooterComponent,
     ArticleComponent,
     PanierComponent,
+    ModifArticleComponent,
   ],
   imports: [
     BrowserModule,

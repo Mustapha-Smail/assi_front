@@ -5,6 +5,7 @@ import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { DisqueDurComponent } from './disque-dur/disque-dur.component';
 import { HomeComponent } from './home/home.component';
+import { ModifArticleComponent } from './modif-article/modif-article.component';
 import { PanierComponent } from './panier/panier.component';
 import { PcAccessoiresComponent } from './pc-accessoires/pc-accessoires.component';
 import { PcBureauComponent } from './pc-bureau/pc-bureau.component';
@@ -27,6 +28,11 @@ const routes: Routes = [
   { path: 'stockage-accessoires', component: StockageAccessoiresComponent },
   { path: 'Connexion', component: ConnexionComponent },
   { path: 'article/:id', component: ArticleComponent },
+  {
+    path: 'article-edit/:id',
+    component: ModifArticleComponent,
+    pathMatch: 'full',
+  },
   { path: 'panier', component: PanierComponent },
 ];
 @NgModule({

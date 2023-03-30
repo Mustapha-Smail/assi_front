@@ -1,4 +1,12 @@
 <div class="container">
+  <a
+    routerLink="/article-edit/{{ article.idArticle }}"
+    [queryParams]="article"
+    class="btn btn-warning m-2"
+    >Modifier</a
+  >
+
+  <button class="btn btn-danger" (click)="deleteArticle()">Supprimer</button>
   <div class="row">
     <div class="col-sm">
       <img

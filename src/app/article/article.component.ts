@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '../article.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class ArticleComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -64,5 +65,17 @@ export class ArticleComponent implements OnInit {
 
       localStorage.setItem('panier', JSON.stringify(panierFromLocalStorage));
     }
+  }
+
+  deleteArticle(): any {
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
+      this.articleService.deleteArticle(id).subscribe((result: any) => {
+        console.log(result);
+        if (result > 0) {
+          this.router.navigate(['/']);
+        }
+      });
+    });
   }
 }
