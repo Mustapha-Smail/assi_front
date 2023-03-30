@@ -56,8 +56,10 @@ export class ArticleComponent implements OnInit {
         const pos = panierFromLocalStorage.articles.findIndex(
           (ar: { article: any }) => ar.article.idArticle === article.idArticle
         );
+        console.log(q);
 
-        panierFromLocalStorage.articles[pos].quantite = q;
+        panierFromLocalStorage.articles[pos].quantite += q;
+        console.log(panierFromLocalStorage);
       }
 
       localStorage.setItem('panier', JSON.stringify(panierFromLocalStorage));
