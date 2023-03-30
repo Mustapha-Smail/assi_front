@@ -78,11 +78,19 @@
       </li>
     </ul>
     <div class="ms-auto">
-      <a routerLink="/Connexion">
+      <a routerLink="/Connexion" *ngIf="!checkUserLoggedIn()">
         <button class="btn btn-outline-success m-1" type="submit">
           Connexion
         </button>
       </a>
+      <button
+        *ngIf="checkUserLoggedIn()"
+        class="btn btn-outline-success m-1"
+        type="submit"
+        (click)="logout()"
+      >
+        Deconnexion
+      </button>
       <a routerLink="/panier">
         <button class="btn btn-success m-1" type="submit">Panier</button>
       </a>

@@ -16,4 +16,12 @@ export class NavbarComponent implements OnInit {
       .getAll()
       .subscribe((result) => (this.categories = result));
   }
+
+  checkUserLoggedIn(): boolean {
+    return localStorage.getItem('user') ? true : false;
+  }
+
+  logout(): void {
+    localStorage.removeItem('user');
+  }
 }

@@ -17,7 +17,7 @@ import { DisqueDurComponent } from './disque-dur/disque-dur.component';
 import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { StockageAccessoiresComponent } from './stockage-accessoires/stockage-accessoires.component';
 import { FooterComponent } from './footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArticleComponent } from './article/article.component';
 import { PanierComponent } from './panier/panier.component';
 
@@ -40,7 +40,13 @@ import { PanierComponent } from './panier/panier.component';
     ArticleComponent,
     PanierComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

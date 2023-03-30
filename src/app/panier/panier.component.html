@@ -1,7 +1,64 @@
-<p>panier works!</p>
+<div class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center row">
+    <div class="col-md-8">
+      <div class="p-2">
+        <h2>Panier</h2>
+      </div>
+      <div class="p-2 bg-white" *ngIf="!checkCart()">
+        <h4>vide...</h4>
+      </div>
+      <div *ngIf="checkCart()">
+        <div
+          class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded"
+          *ngFor="let article of articles"
+        >
+          <div class="mr-1">
+            <img class="rounded" src="{{ article.article.photo }}" width="70" />
+          </div>
+          <div class="d-flex flex-column align-items-center product-details">
+            <span class="fw-bold">{{ article.article.libelle }}</span>
+            <div class="d-flex flex-row">
+              <div class="size mr-1">
+                <span class="text-grey">Marque:</span
+                ><span class="fw-italic">{{ article.article.marque }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row align-items-center qty">
+            <h5 class="text-grey mt-1 mr-1 ml-1">{{ article.quantite }}</h5>
+          </div>
+          <div>
+            <h5 class="text-grey">
+              {{ article.article.prix * article.quantite }}€
+            </h5>
+          </div>
+          <div class="d-flex align-items-center">
+            <button
+              type="button"
+              class="btn btn-link"
+              (click)="removeArticle(article.article.idArticle)"
+            >
+              <i class="fa fa-trash mb-1 text-danger"></i>
+            </button>
+          </div>
+        </div>
 
-<ul>
-  <li *ngFor="let article of articles">
-    {{ article.article.libelle }} || {{ article.quantite }}
-  </li>
-</ul>
+        <div class="row">
+          <h5 class="col-4 align-self-end offset-md-8">
+            Total: <span class="fw-bold">{{ getTotal() }}€</span>
+          </h5>
+        </div>
+        <div
+          class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"
+        >
+          <button
+            class="btn btn-warning btn-block btn-lg ml-2 pay-button"
+            type="button"
+          >
+            Commander
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
