@@ -1,0 +1,73 @@
+<div class="container py-5 bg-white mt-4 px-3 rounded">
+  <!-- <div
+      class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded"
+    > -->
+  <h1>Ajouter un article</h1>
+  <form (ngSubmit)="onSubmit()" [formGroup]="articleForm">
+    <div class="form-group">
+      <label for="libelle">Libelle:</label>
+      <input
+        class="form-control"
+        type="text"
+        id="libelle"
+        name="libelle"
+        formControlName="libelle"
+        required
+        placeholder="Pixel 7 pro"
+      />
+    </div>
+    <div class="form-group">
+      <label for="marque">Marque:</label>
+      <input
+        class="form-control"
+        type="text"
+        id="marque"
+        name="marque"
+        formControlName="marque"
+        required
+        placeholder="Google"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="categorie">Catégorie:</label>
+      <select class="form-select" formControlName="categorie">
+        <option
+          *ngFor="let categorie of categories"
+          value="{{ categorie.idCategorie }}"
+        >
+          {{ categorie.libelle }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="prix">Prix:</label>
+      <input
+        class="form-control"
+        type="number"
+        id="prix"
+        name="prix"
+        formControlName="prix"
+        required
+        placeholder="649"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="photo">Photo:</label>
+      <input
+        class="form-control"
+        type="text"
+        id="photo"
+        name="photo"
+        formControlName="photo"
+        required
+        placeholder="https://www.your-image-url.fr"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-warning my-2">Submit</button>
+  </form>
+  <!-- </div> -->
+</div>

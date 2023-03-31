@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArticleComponent } from './article/article.component';
 import { PanierComponent } from './panier/panier.component';
 import { ModifArticleComponent } from './modif-article/modif-article.component';
+import { AjoutArticleComponent } from './ajout-article/ajout-article.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ModifArticleComponent } from './modif-article/modif-article.component';
     ArticleComponent,
     PanierComponent,
     ModifArticleComponent,
+    AjoutArticleComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AjoutArticleComponent } from './ajout-article/ajout-article.component';
 import { ArticleComponent } from './article/article.component';
 import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { ConnexionComponent } from './connexion/connexion.component';
@@ -28,11 +29,8 @@ const routes: Routes = [
   { path: 'stockage-accessoires', component: StockageAccessoiresComponent },
   { path: 'Connexion', component: ConnexionComponent },
   { path: 'article/:id', component: ArticleComponent },
-  {
-    path: 'article-edit/:id',
-    component: ModifArticleComponent,
-    pathMatch: 'full',
-  },
+  { path: 'article-edit/:id', component: ModifArticleComponent },
+  { path: 'add-article', component: AjoutArticleComponent },
   { path: 'panier', component: PanierComponent },
 ];
 @NgModule({

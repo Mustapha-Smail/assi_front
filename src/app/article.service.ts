@@ -11,33 +11,32 @@ export class ArticleService {
   article: any;
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
+    }),
+  };
+
   getAll(param: string | null): Observable<Object> {
     return this.http.get<Object>(`${this.url}/${param}`);
   }
 
-  editArticle(param: string | null, formData: any): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
-      }),
-    };
+  addArticle(formData: any): Observable<any> {
+    return this.http.post<any>(this.url, formData, this.httpOptions);
+  }
 
-    return this.http.put<any>(`${this.url}/${param}`, formData, httpOptions);
+  editArticle(param: string | null, formData: any): Observable<any> {
+    return this.http.put<any>(
+      `${this.url}/${param}`,
+      formData,
+      this.httpOptions
+    );
   }
 
   deleteArticle(param: string | null): any {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
-      }),
-    };
-
-    return this.http.delete<any>(`${this.url}/${param}`, httpOptions);
+    return this.http.delete<any>(`${this.url}/${param}`, this.httpOptions);
   }
 }

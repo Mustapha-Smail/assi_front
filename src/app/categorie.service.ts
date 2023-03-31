@@ -13,6 +13,10 @@ export class CategorieService {
     return this.http.get<Array<any>>(this.url);
   }
 
+  getSubCategories(): Observable<any> {
+    return this.http.get<any>(`${this.url}/sub`);
+  }
+
   getPcPortable(): Observable<Array<any>> {
     return this.http.get<Array<any>>(this.url + '/4');
   }
