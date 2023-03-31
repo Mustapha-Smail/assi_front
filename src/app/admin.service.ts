@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class UtilisateurService {
-  url = 'http://localhost:8080/projet/rest/utilisateur';
+export class AdminService {
+  url = 'http://localhost:8080/projet/rest/admin';
   constructor(private http: HttpClient) {}
 
   connexion(email: string, password: string): Observable<any> {

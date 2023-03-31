@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'cle-usb', component: CleUsbComponent },
   { path: 'stockage-accessoires', component: StockageAccessoiresComponent },
   { path: 'Connexion', component: ConnexionComponent },
+  { path: 'admin', component: ConnexionComponent },
   { path: 'article/:id', component: ArticleComponent },
   { path: 'article-edit/:id', component: ModifArticleComponent },
   { path: 'add-article', component: AjoutArticleComponent },

@@ -17,11 +17,11 @@ export class NavbarComponent implements OnInit {
       .subscribe((result) => (this.categories = result));
   }
 
-  checkUserLoggedIn(): boolean {
-    return localStorage.getItem('user') ? true : false;
+  checkUserLoggedIn(user: string): boolean {
+    return localStorage.getItem(user) ? true : false;
   }
 
-  logout(): void {
-    localStorage.removeItem('user');
+  logout(user: string): void {
+    localStorage.removeItem(user);
   }
 }

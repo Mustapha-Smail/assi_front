@@ -78,23 +78,34 @@
       </li>
     </ul>
     <div class="ms-auto">
-      <a routerLink="/Connexion" *ngIf="!checkUserLoggedIn()">
+      <a routerLink="/Connexion" *ngIf="!checkUserLoggedIn('user')">
         <button class="btn btn-outline-success m-1" type="submit">
           Connexion
         </button>
       </a>
+      <a routerLink="/admin" *ngIf="!checkUserLoggedIn('admin')">
+        <button class="btn btn-outline-success m-1" type="submit">Admin</button>
+      </a>
       <button
-        *ngIf="checkUserLoggedIn()"
+        *ngIf="checkUserLoggedIn('user')"
         class="btn btn-outline-success m-1"
         type="submit"
-        (click)="logout()"
+        (click)="logout('user')"
       >
         Deconnexion
+      </button>
+      <button
+        *ngIf="checkUserLoggedIn('admin')"
+        class="btn btn-outline-success m-1"
+        type="submit"
+        (click)="logout('admin')"
+      >
+        Admin Deconnexion
       </button>
       <a routerLink="/panier">
         <button class="btn btn-success m-1" type="submit">Panier</button>
       </a>
-      <a routerLink="/add-article">
+      <a routerLink="/add-article" *ngIf="checkUserLoggedIn('admin')">
         <button class="btn btn-outline-danger m-1" type="submit">
           Ajouter
         </button>

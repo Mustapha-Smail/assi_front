@@ -26,6 +26,10 @@ export class ArticleComponent implements OnInit {
     });
   }
 
+  checkUserLoggedIn(user: string): boolean {
+    return localStorage.getItem(user) ? true : false;
+  }
+
   public addPanier(article: any, quantite: string): void {
     var q: number = +quantite;
     var basket = {
