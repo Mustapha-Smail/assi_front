@@ -53,18 +53,15 @@ export class ArticleComponent implements OnInit {
           ar.article.idArticle === article.idArticle
       );
 
-      console.log(found);
-
       if (!found) {
         panierFromLocalStorage.articles.push({ article, quantite });
       } else {
         const pos = panierFromLocalStorage.articles.findIndex(
           (ar: { article: any }) => ar.article.idArticle === article.idArticle
         );
-        console.log(q);
+        var qStorage: number = +panierFromLocalStorage.articles[pos].quantite;
 
-        panierFromLocalStorage.articles[pos].quantite += q;
-        console.log(panierFromLocalStorage);
+        panierFromLocalStorage.articles[pos].quantite = qStorage + q;
       }
 
       localStorage.setItem('panier', JSON.stringify(panierFromLocalStorage));
